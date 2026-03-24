@@ -52,25 +52,25 @@ The system includes an AI chatbot that assists users by:
 This feature makes the system smarter and more user-friendly compared to traditional queue systems.
 
 Roles and Task Distribution
-Amela Kondi — Team Leader
+Amela Kondi — Team Leader:
 •	Project management and coordination
 •	GitHub repository creation and maintenance
 •	Frontend development (main structure & design)
 •	Integration of all system components
 •	Final review and submission
 
-Ester Sino
+Ester Sino:
 •	UI/UX design support
 •	Testing and improving user interface
 •	Assisting with frontend elements
 
-Eriselda Boja
+Eriselda Boja:
 •	Research and documentation
 •	Writing project description and scope
 •	Assisting in testing and validation
 
 
-Shared Responsibilities
+Shared Responsibilities:
 •	Brainstorming ideas and system features
 •	Reviewing and improving the project
 •	Preparing presentation and final submission
