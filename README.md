@@ -28,6 +28,7 @@ Objectives:
 •	Enhance user experience through smart assistance
 
 Application Description
+
 Queue Bank MS is a web-based application designed for three types of users:
 •	Customers (Users): Book and manage appointments
 •	Staff: Handle daily appointments and update status
@@ -44,6 +45,7 @@ Key Features:
 •  Modern and responsive UI
 
 AI Chatbot Feature
+
 The system includes an AI chatbot that assists users by:
 •	Answering common questions
 •	Helping users choose the correct banking service
@@ -52,6 +54,7 @@ The system includes an AI chatbot that assists users by:
 This feature makes the system smarter and more user-friendly compared to traditional queue systems.
 
 Roles and Task Distribution
+
 Amela Kondi — Team Leader:
 •	Project management and coordination
 •	GitHub repository creation and maintenance
