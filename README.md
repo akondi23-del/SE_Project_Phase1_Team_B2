@@ -12,11 +12,9 @@ Team members
 
 Project Details
 
-Problem statement
-Traditional banking systems often suffer from long waiting lines, poor time management, and lack of guidance for customers. Many users are unsure which service or department they need, which increases confusion and delays.
+Problem statement:Traditional banking systems often suffer from long waiting lines, poor time management, and lack of guidance for customers. Many users are unsure which service or department they need, which increases confusion and delays.
 
-Proposal solution
-QueueBank MS is a smart appointment-based system that allows customers to book bank visits online and includes an AI-powered chatbot assistant. The chatbot helps users identify the correct service, provides guidance, and improves the overall booking experience.
+Proposal solution:QueueBank MS is a smart appointment-based system that allows customers to book bank visits online and includes an AI-powered chatbot assistant. The chatbot helps users identify the correct service, provides guidance, and improves the overall booking experience.
 
 Project Scope
 
