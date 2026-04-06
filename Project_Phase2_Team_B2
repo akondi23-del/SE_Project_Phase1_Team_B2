@@ -1,0 +1,117 @@
+1. Chosen Development Model
+Model: Waterfall
+Justification: Waterfall was chosen because the project requirements were clear from the start, the scope is fixed, and the DMAIC methodology follows the same sequential phase-by-phase structure.
+
+2. User Requirements
+a. Stakeholders
+
+Bank Customers — book appointments online to avoid queuing
+Bank Staff — manage the daily appointment queue
+Admin (Bank Manager) — full control over the system
+Development Team — build and maintain the system
+Epoka University — evaluate the project academically
+
+b. User Stories
+
+As a customer, I want to book a bank appointment online so that I can avoid waiting in a queue.
+As a customer, I want to choose a date and time slot so that I can plan my visit.
+As a customer, I want to receive a confirmation code so that I can identify my appointment.
+As a customer, I want to cancel my booking so that I can free up my slot if plans change.
+As a customer, I want to use QueueBot so that I can get quick answers about services and hours.
+As a staff member, I want to see today's appointments so that I can serve customers efficiently.
+As a staff member, I want to mark appointments as Completed or No-show so that the system stays updated.
+As an admin, I want to manage staff and services so that the system stays accurate and up to date.
+As an admin, I want to view booking analytics so that I can monitor system performance.
+
+
+3. Functional Requirements
+a. Description
+
+The system must allow customers to book an appointment by selecting a service, date, and time slot.
+The system must generate a unique confirmation code for every booking.
+The system must prevent double-booking of the same time slot.
+The system must allow customers to view and cancel their bookings.
+The system must block weekends and past dates from selection.
+The system must allow staff to log in and manage appointments.
+The system must allow staff to mark appointments as Completed or No-show.
+The system must allow the admin to manage staff, services, and all bookings.
+The system must include a QueueBot chatbot that answers common customer questions.
+
+b. Acceptance Criteria
+Appointment Booking
+
+Customer selects a service, date, and available time slot
+Booked slots are visually marked and cannot be selected
+A unique QB-XXXXX code is generated after confirming
+Booking appears immediately in My Bookings
+
+My Bookings
+
+Customer can search and view all their bookings
+Customer can cancel a Confirmed booking
+
+Staff Dashboard
+
+Staff can log in with Employee ID and password
+Staff can view, search, and filter all appointments
+Staff can mark appointments as Completed or No-show with one click
+
+Admin Panel
+
+Admin logs in with separate credentials
+Admin can manage bookings, staff, and services
+Admin can view charts and export data
+
+
+4. Non-Functional Requirements
+a. Description
+
+Usability: Easy to use for customers with no technical experience
+Performance: Pages and actions must respond without delay
+Reliability: No booking data should be lost
+Accessibility: Must work on desktop, tablet, and mobile
+Security: Staff and admin portals require login before access
+
+b. Acceptance Criteria
+
+Pages load in under 2 seconds
+Booking process completes in under 5 seconds
+Bookings persist after closing and reopening the browser
+Website works correctly on Chrome, Safari, and Firefox
+Staff and admin pages are only accessible after login
+
+
+5. Application Specifications
+a. Architecture
+The system follows a three-tier client-side architecture.
+The frontend consists of four HTML pages styled with CSS. 
+The logic layer is handled by JavaScript files for each page. 
+Data is stored in the browser's localStorage with no external database. 
+A lightweight Node.js server handles QueueBot chat requests.
+
+b. Database Model
+Data is stored in browser localStorage as JSON. Three collections are used. 
+Bookings store the confirmation code, service, date, time slot, customer details,
+and status. Staff stores Employee ID, name, email, and role. Services store the 
+service name, icon, description, and duration. Each booking code is unique and each 
+time slot can only be booked once per date.
+
+c. Technologies Used
+
+HTML5 — page structure
+CSS3 — styling and responsive design
+JavaScript — interactivity and booking logic
+Node.js and Express — QueueBot backend server
+localStorage — data storage without a database
+Google Fonts — Playfair Display and Nunito typography
+SVG — custom illustrations
+
+d. User Interface Design
+The interface uses a pastel green color palette with sage green, mint, teal, and cream. The Home page features an illustrated bank scene with a teller, customers, and a waiting area. The User Portal has a four-step booking wizard. The Staff Dashboard shows KPI cards and an appointment table. The Admin Panel has a sidebar with sections for bookings, staff, services, and settings.
+e. Security Measures
+
+Role-based access: separate portals for Customer, Staff, and Admin
+Staff login requires Employee ID and password
+Admin login uses separate credentials
+All booking forms validate required fields before saving
+API credentials are stored only in the server file, never in the browser
