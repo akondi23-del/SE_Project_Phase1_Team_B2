@@ -16,7 +16,7 @@ a. Stakeholders
 
 Bank Customers — end-users who book appointments online to avoid queuing and save time.
 
-Bank Staff — employees who serve customers at the counter and need to manage the daily appointment queue.
+Bank Staff — employees who serve customers at the counter and need to manage the daily appointment queue / suport ticket / 
 
 Admin (Bank Manager) — system administrator who needs full control over bookings, staff accounts, and available services.
 
@@ -106,7 +106,7 @@ a. Descriptions
 1. The system must load all pages in under 2 seconds.
 2. The booking process must complete in under 5 seconds from start to confirmation.
 3. The system must work correctly on Chrome, Safari, and Firefox browsers.
-4. The system must display correctly on desktop, tablet, and mobile screens.
+4. The system must display correctly on desktop, tablet, and mobile screens.- correclty 
 5. The system must save booking data permanently in the database so it is never lost.
 6. The system must handle multiple bookings in the same session without errors.
 7. The system must be easy to use for customers with no technical experience.
