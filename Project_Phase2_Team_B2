@@ -1,117 +1,224 @@
 1. Chosen Development Model
+
 Model: Waterfall
-Justification: Waterfall was chosen because the project requirements were clear from the start, the scope is fixed, and the DMAIC methodology follows the same sequential phase-by-phase structure.
+
+Waterfall was chosen because the project requirements were 
+clear from the start, the scope is fixed, and the DMAIC methodology follows 
+the same sequential phase-by-phase structure. Each phase is fully completed 
+before the next one begins — Define, Measure, Analyze, Improve, and Control 
+— which matches exactly how Waterfall works. The project scope is small and 
+well-defined, documentation is required at each phase, and there is no need 
+for changes during development.
 
 2. User Requirements
+
 a. Stakeholders
 
-Bank Customers — book appointments online to avoid queuing
-Bank Staff — manage the daily appointment queue
-Admin (Bank Manager) — full control over the system
-Development Team — build and maintain the system
-Epoka University — evaluate the project academically
+Bank Customers — end-users who book appointments online to avoid queuing and save time.
+
+Bank Staff — employees who serve customers at the counter and need to manage the daily appointment queue.
+
+Admin (Bank Manager) — system administrator who needs full control over bookings, staff accounts, and available services.
+
+Development Team (Amela, Ester, Eriselda) — students who build and maintain the system.
 
 b. User Stories
 
-As a customer, I want to book a bank appointment online so that I can avoid waiting in a queue.
-As a customer, I want to choose a date and time slot so that I can plan my visit.
-As a customer, I want to receive a confirmation code so that I can identify my appointment.
-As a customer, I want to cancel my booking so that I can free up my slot if plans change.
-As a customer, I want to use QueueBot so that I can get quick answers about services and hours.
-As a staff member, I want to see today's appointments so that I can serve customers efficiently.
-As a staff member, I want to mark appointments as Completed or No-show so that the system stays updated.
-As an admin, I want to manage staff and services so that the system stays accurate and up to date.
-As an admin, I want to view booking analytics so that I can monitor system performance.
-
+1. As a customer, I want to book a bank appointment online so that I can avoid waiting in a queue.
+2. As a customer, I want to choose a specific date and time slot so that I can plan my visit.
+3. As a customer, I want to receive a confirmation code so that I can identify my appointment at the counter.
+4. As a customer, I want to view all my bookings so that I can keep track of my appointments.
+5. As a customer, I want to cancel a booking so that I can free up my slot if my plans change.
+6. As a customer, I want to use QueueBot so that I can get quick answers without calling the bank.
+7. As a staff member, I want to see all today's appointments so that I can serve customers efficiently.
+8. As a staff member, I want to mark appointments as Completed or No-show so that the system stays updated.
+9. As a staff member, I want to search and filter appointments so that I can find specific bookings quickly.
+10. As an admin, I want to manage staff accounts so that I can add or remove employees as needed.
+11. As an admin, I want to manage banking services so that customers always see accurate options.
+12. As an admin, I want to view booking analytics and export data so that I can monitor system performance.
 
 3. Functional Requirements
+
 a. Description
 
-The system must allow customers to book an appointment by selecting a service, date, and time slot.
-The system must generate a unique confirmation code for every booking.
-The system must prevent double-booking of the same time slot.
-The system must allow customers to view and cancel their bookings.
-The system must block weekends and past dates from selection.
-The system must allow staff to log in and manage appointments.
-The system must allow staff to mark appointments as Completed or No-show.
-The system must allow the admin to manage staff, services, and all bookings.
-The system must include a QueueBot chatbot that answers common customer questions.
+1. The system must allow customers to register with a name, email, and password.
+2. The system must allow customers to log in with valid credentials.
+3. The system must allow customers to log out of their account.
+4. The system must display all available banking services with name, description, and duration.
+5. The system must allow customers to select a service before proceeding with a booking.
+6. The system must display a calendar showing available dates for booking.
+7. The system must block past dates and weekends from being selected.
+8. The system must display available and booked time slots for a selected date.
+9. The system must prevent customers from selecting an already booked time slot.
+10. The system must allow customers to enter their personal details to complete a booking.
+11. The system must validate that all required fields are filled before confirming a booking.
+12. The system must generate a unique QB-XXXXX confirmation code for every booking.
+13. The system must display a booking summary after confirmation.
+14. The system must allow customers to view all their bookings in one page.
+15. The system must allow customers to cancel a confirmed booking.
+16. The system must allow staff to log in with an Employee ID and password.
+17. The system must allow staff to view all appointments in a table with search and filter options.
+18. The system must allow staff to mark appointments as Completed or No-show.
+19. The system must allow the admin to log in with separate administrator credentials.
+20. The system must allow the admin to add and remove staff members.
+21. The system must allow the admin to add and remove banking services.
+22. The system must display booking statistics with a bar chart and a donut chart in the admin dashboard.
+23. The system must allow the admin to delete any booking.
+24. The system must allow the admin to export all data as a JSON file.
+25. The system must include a QueueBot chatbot that answers common customer questions.
 
 b. Acceptance Criteria
-Appointment Booking
 
-Customer selects a service, date, and available time slot
-Booked slots are visually marked and cannot be selected
-A unique QB-XXXXX code is generated after confirming
-Booking appears immediately in My Bookings
+FR12 — Confirmation Code Generation
+- A unique code starting with QB- is generated after every successful booking
+- No two bookings have the same confirmation code
+- The code is displayed on the confirmation screen immediately after booking
+- The code is visible in the My Bookings page under the booking details
 
-My Bookings
+FR8 — Time Slot Display
+- Available slots are shown after a date is selected
+- Already booked slots are visually different and cannot be clicked
+- Slots update correctly when a new date is selected
+- All slots are within branch hours 09:00 to 17:00
 
-Customer can search and view all their bookings
-Customer can cancel a Confirmed booking
+FR11 — Form Validation
+- Customer cannot confirm a booking if any required field is empty
+- An error message is shown specifying which fields are missing
+- An error message is shown if the email format is invalid
+- The booking is only saved after all validations pass
 
-Staff Dashboard
+FR17 — Staff Appointment Table
+- All appointments are displayed with code, name, service, date, time, and status
+- Staff can search by customer name, confirmation code, or service
+- Staff can filter by All, Confirmed, Completed, Cancelled, or No-show
+- Results update immediately when a search or filter is applied
 
-Staff can log in with Employee ID and password
-Staff can view, search, and filter all appointments
-Staff can mark appointments as Completed or No-show with one click
-
-Admin Panel
-
-Admin logs in with separate credentials
-Admin can manage bookings, staff, and services
-Admin can view charts and export data
-
+FR22 — Admin Analytics Dashboard
+- The bar chart shows the number of bookings grouped by service
+- The donut chart shows the percentage breakdown of booking statuses
+- Both charts update automatically when booking data changes
+- The total number of bookings is shown in a KPI card above the charts
 
 4. Non-Functional Requirements
-a. Description
 
-Usability: Easy to use for customers with no technical experience
-Performance: Pages and actions must respond without delay
-Reliability: No booking data should be lost
-Accessibility: Must work on desktop, tablet, and mobile
-Security: Staff and admin portals require login before access
+a. Descriptions
+
+1. The system must load all pages in under 2 seconds.
+2. The booking process must complete in under 5 seconds from start to confirmation.
+3. The system must work correctly on Chrome, Safari, and Firefox browsers.
+4. The system must display correctly on desktop, tablet, and mobile screens.
+5. The system must save booking data permanently in the database so it is never lost.
+6. The system must handle multiple bookings in the same session without errors.
+7. The system must be easy to use for customers with no technical experience.
+8. All buttons, labels, and instructions must be clearly readable.
+9. The color contrast must meet basic readability standards.
+10. The booking flow must be completable in 3 steps or fewer without instructions.
+11. The staff dashboard must only be accessible after a valid staff login.
+12. The admin panel must only be accessible after valid admin credentials.
+13. No customer must be able to access the staff or admin pages directly.
+14. API credentials must be stored only in the server file and never exposed in the browser.
+15. All form inputs must be validated before any data is saved.
+16. The system must display error messages clearly when something goes wrong.
+17. The QueueBot must respond to customer questions within 1 second.
+18. The calendar must render available slots instantly after a date is selected.
+19. The system code must be organized across separate HTML, CSS, and JavaScript files.
+20. Each file must handle only its own page logic to make updates easy.
+21. The admin data export must generate a complete and accurate JSON file.
+22. The system must work without an internet connection for all features except QueueBot.
 
 b. Acceptance Criteria
 
-Pages load in under 2 seconds
-Booking process completes in under 5 seconds
-Bookings persist after closing and reopening the browser
-Website works correctly on Chrome, Safari, and Firefox
-Staff and admin pages are only accessible after login
+NFR1 — Page Load Speed
+- All four pages load in under 2 seconds on a standard connection
+- The booking confirmation screen appears in under 1 second after submitting
+- The calendar renders instantly when the booking page is opened
+- No page shows a blank screen for more than 1 second
 
+NFR4 — Responsiveness
+- The home page displays correctly on screens smaller than 768px
+- The booking steps stack vertically on mobile screens
+- All buttons are large enough to tap on a touchscreen
+- The staff and admin tables scroll horizontally on small screens
+
+NFR7 — Usability
+- A first-time user can complete a booking without any instructions
+- The 4-step progress indicator is always visible during the booking flow
+- Error messages appear next to the field that caused the error
+- The QueueBot suggestion buttons guide users without them needing to type
+
+NFR11 — Staff Access Security
+- The Staff Dashboard page shows only the login screen before authentication
+- Entering a wrong Employee ID or password shows an error message
+- The dashboard data is only visible after successful login
+- Staff cannot navigate to the admin panel from the staff portal
+
+NFR19 — Code Maintainability
+- Each page has its own separate HTML, CSS, and JavaScript file
+- No page's JavaScript file contains logic belonging to another page
+- CSS styles are not duplicated across files
+- A new developer can understand the file structure within 10 minutes
 
 5. Application Specifications
+
 a. Architecture
-The system follows a three-tier client-side architecture.
-The frontend consists of four HTML pages styled with CSS. 
-The logic layer is handled by JavaScript files for each page. 
-Data is stored in the browser's localStorage with no external database. 
-A lightweight Node.js server handles QueueBot chat requests.
+
+QueueBank MS follows a three-tier architecture. The Presentation Layer consists 
+of four HTML pages — Home, User Portal, Staff Dashboard, and Admin Panel — each
+styled with CSS. The Logic Layer consists of JavaScript files that handle all 
+interactivity including the booking flow, calendar, form validation, and data 
+management, along with PHP files that process requests and communicate with 
+the database. The Data Layer uses a MySQL database running on XAMPP to store 
+all booking, staff, and service data permanently and consistently across all 
+users and devices. For the QueueBot feature, a lightweight Node.js server built
+with Express acts as middleware between the browser and the AI service.
 
 b. Database Model
-Data is stored in browser localStorage as JSON. Three collections are used. 
-Bookings store the confirmation code, service, date, time slot, customer details,
-and status. Staff stores Employee ID, name, email, and role. Services store the 
-service name, icon, description, and duration. Each booking code is unique and each 
-time slot can only be booked once per date.
+
+QueueBank MS uses MySQL as its data store organized into three tables.
+
+Bookings — stores confirmation code, service name and duration, date and
+time slot, customer name, email, phone, notes, booking status, and created 
+timestamp. Each booking code is unique and each time slot can only be booked once per date.
+
+Staff — stores Employee ID, name, email, role, and status. Each Employee ID must be unique.
+
+Services — stores service ID, icon, name, description, and duration in minutes. All bookings 
+reference a valid service ID.
 
 c. Technologies Used
 
-HTML5 — page structure
-CSS3 — styling and responsive design
-JavaScript — interactivity and booking logic
-Node.js and Express — QueueBot backend server
-localStorage — data storage without a database
-Google Fonts — Playfair Display and Nunito typography
-SVG — custom illustrations
+- HTML5 — page structure, works in all browsers without installation
+- CSS3 — styling and responsive design, full control over the pastel green theme
+- JavaScript — all interactivity and booking logic, runs directly in the browser
+- PHP — server-side scripting that connects the website to the MySQL database
+- MySQL — relational database that stores all bookings, staff, and services permanently
+and allows all users to share the same data across different devices and browsers
+- XAMPP — local server environment that runs Apache, PHP, and MySQL together
+- Node.js and Express — QueueBot backend server, lightweight and easy to run locally
+- Google Fonts — Playfair Display and Nunito for professional typography
+- SVG — custom illustrations, scalable with no external image files needed
 
 d. User Interface Design
-The interface uses a pastel green color palette with sage green, mint, teal, and cream. The Home page features an illustrated bank scene with a teller, customers, and a waiting area. The User Portal has a four-step booking wizard. The Staff Dashboard shows KPI cards and an appointment table. The Admin Panel has a sidebar with sections for bookings, staff, services, and settings.
-e. Security Measures
 
-Role-based access: separate portals for Customer, Staff, and Admin
-Staff login requires Employee ID and password
-Admin login uses separate credentials
-All booking forms validate required fields before saving
-API credentials are stored only in the server file, never in the browser
+The interface uses a pastel green color palette with sage green, mint, teal, 
+and cream as the main colors. Typography uses Playfair Display for headings 
+and Nunito for body text.
+
+Home Page — public landing page with a hero section featuring a custom illustrated
+bank scene showing a teller serving a customer, two people waiting on a bench, 
+a wall clock, and a calendar. Includes a stats bar, a How It Works section with
+four illustrated steps, and portal selection cards for Customer, Staff, and Admin.
+
+User Portal — two-tab layout with Book Appointment and My Bookings. The booking
+flow uses a four-step wizard with a visible step indicator: choose a service, 
+pick a date and time slot, enter personal details, and view the confirmation screen
+with a unique code.
+
+Staff Dashboard — protected by a login screen. After login the page shows KPI cards, 
+today's appointment stats, and a full appointment table with search, filter, and action 
+buttons.
+
+Admin Panel — protected by a separate login with a sidebar navigation. Sections include
+Dashboard with charts, All Bookings, Staff Management, User Records, Services Management,
+and System Settings.
+
