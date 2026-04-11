@@ -2,7 +2,11 @@
 
 Model: Waterfall
 
-Justification: Waterfall was chosen because the project requirements were clear from the start, the scope is fixed, and the DMAIC methodology follows the same sequential phase-by-phase structure. Each phase is fully completed before the next one begins — Define, Measure, Analyze, Improve, and Control — which matches exactly how Waterfall works. The project scope is small and well-defined, documentation is required at each phase, and there is no need for changes during development.
+Justification: Waterfall was chosen because the project requirements were clear from the start,
+the scope is fixed, and the DMAIC methodology follows the same sequential phase-by-phase structure.
+Each phase is fully completed before the next one begins — Define, Measure, Analyze, Improve, and 
+Control — which matches exactly how Waterfall works. The project scope is small and well-defined,
+documentation is required at each phase, and there is no need for changes during development.
 
 2. User Requirements
 
@@ -17,7 +21,8 @@ The system includes the following staff roles:
 - Loans Officer — specializes in loan applications and financial consultations
 - Supervisor — oversees all staff members and ensures the queue runs smoothly
 
-Admin (Bank Manager) — system administrator who has full control over bookings, staff accounts, available services, and support tickets.
+Admin (Bank Manager) — system administrator who has full control over bookings, staff accounts, 
+available services, and support tickets.
 
 Development Team (Amela, Ester, Eriselda) — students who build and maintain the system.
 
@@ -114,26 +119,25 @@ a. Description
 
 1. The system must load all pages in under 2 seconds.
 2. The booking process must complete in under 5 seconds from start to confirmation.
-3. The system must handle multiple users booking at the same time without errors.
+3. The system must support multiple users performing bookings simultaneously without data conflicts or crashes.
 4. The system must respond to any user action in under 1 second.
-5. The system must work correctly on Chrome, Safari, and Firefox browsers.
-6. The system must display correctly on desktop, tablet, and mobile screens.
-7. The system must save booking data permanently so it is never lost.
-8. The system must remain available and working at all times during branch hours.
-9. The system must recover correctly if a page is refreshed during the booking process.
-10. The system must be easy to use for customers with no technical experience.
-11. All buttons, labels, and instructions must be clearly readable.
-12. The booking flow must be completable without any instructions or guidance.
-13. The color contrast must meet basic readability standards for all users.
-14. The staff dashboard must only be accessible after a valid staff login.
-15. The admin panel must only be accessible after valid admin credentials.
-16. No customer must be able to access the staff or admin pages directly.
-17. All passwords must be stored securely in the database and never in plain text.
-18. The system must protect customer personal data from unauthorized access.
-19. The system code must be organized across separate HTML, CSS, JavaScript, and PHP files.
-20. Each file must handle only its own responsibility to make future updates easy.
-21. The system must be easy to extend with new features without rewriting existing code.
-22. The support ticket system must notify the admin when a new ticket is submitted.
+5. The system must display correctly on desktop, tablet, and mobile screens.
+6. The system must save booking data permanently so it is never lost.
+7. The system must maintain continuous availability with no downtime during branch operating hours (08:30 to 15:30).
+8. The system must preserve booking data integrity if a page is accidentally refreshed during the booking process.
+9. The system must be easy to use for customers with no technical experience.
+10. All buttons, labels, and instructions must be clearly readable.
+11. The booking flow must be completable without any instructions or guidance.
+12. The color contrast must meet basic readability standards for all users.
+13. The staff dashboard must only be accessible after a valid staff login.
+14. The admin panel must only be accessible after valid admin credentials.
+15. No customer must be able to access the staff or admin pages directly.
+16. All passwords must be stored securely in the database and never in plain text.
+17. The system must protect customer personal data from unauthorized access.
+18. The system code must be organized across separate HTML, CSS, JavaScript, and PHP files.
+19. Each file must handle only its own responsibility to make future updates easy.
+20. The system must be easy to extend with new features without rewriting existing code.
+21. The support ticket system must notify the admin when a new ticket is submitted.
 
 b. Acceptance Criteria
 
@@ -143,25 +147,25 @@ NFR1 — Page Load Speed
 - The calendar renders instantly when the booking page is opened
 - No page shows a blank screen for more than 1 second
 
-NFR5 — Browser Compatibility
-- The website displays and functions correctly on Chrome
-- The website displays and functions correctly on Safari
-- The website displays and functions correctly on Firefox
-- No features break or look different across these three browsers
+NFR6 — Data Persistence
+- All bookings are saved permanently in the MySQL database and do not disappear after closing the browser
+- A booking made by one user is visible to the staff and admin immediately after it is confirmed
+- No booking data is lost if the page is refreshed or the browser is closed unexpectedly
+- All staff and service data remains intact after restarting the XAMPP server
 
-NFR10 — Usability
+NFR9 — Usability
 - A first-time user can complete a booking without any instructions
 - The 4-step progress indicator is always visible during the booking flow
 - All form fields have clear placeholder text explaining what to enter
 - The support ticket form is simple and takes less than 1 minute to fill in
 
-NFR14 — Staff Access Security
+NFR13 — Staff Access Security
 - The Staff Dashboard page shows only the login screen before authentication
 - Entering a wrong Employee ID or password shows an error message
 - The dashboard data is only visible after successful login
 - Staff cannot navigate to the admin panel from the staff portal
 
-NFR19 — Code Maintainability
+NFR18 — Code Maintainability
 - Each page has its own separate HTML, CSS, JavaScript, and PHP file
 - No page's JavaScript file contains logic belonging to another page
 - A new developer can understand the file structure within 10 minutes
