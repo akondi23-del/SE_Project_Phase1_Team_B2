@@ -1,0 +1,17 @@
+1.System Architecture Description
+
+•	Customer opens the website and selects a banking service (Frontend- user.html)
+•	Customer picks a date and time slot, enters personal details, submits the booking Form (Frontend – user.html)
+•	The form sends a request to the backend PHP file (add_booking.php)
+•	The PHP file validates the data and checks if the time slot is already taken in MySQL database
+•	The PHP file saves the booking in the database and returns the confirmation code to the frontend 
+•	The confirmation code QB-XXXXX is displayed to the customer (Frontend)
+•	Staff opens the Staff Dashboard and logs in (Frontend- staff.html)
+•	The login form sends credentials to the backend (staff_login.php)
+•	PHP checks the credentials against the staff table in the MySQL database
+•	If valid, the staff dashboard loads all appointments from the database (get-booking.php)
+•	Staff marks an appointment as Completed or No-show, which sends a request to update_status.php
+•	PHP updates the booking status in the MySQL database
+•	Admin opens the Admin Panel and logs in with separate credentials (Frontend-admin.html)
+•	Admin can view all the data, manage staff and services, view charts, and export data
+•	All data operations go through PHP files that read and write to the MySQL database
