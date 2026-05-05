@@ -1,0 +1,13 @@
+Introduction to Testing:
+Software testing is the process of evaluation a software application to identify defects,bugs,
+or unexpected behavior before the the system is deployed to real users.It involves executing 
+the software under controlled conditions and comparing the software under controlled conditions
+and executing the software under controlledconditions and comparing the actual results with the
+expected results.
+
+Testing is a critical phase in software development for seveal reasons:
+- Reliability: testing ensures that the system behaves correctly and consistently under both 
+normal and unexpected conditions.
+-Correctness: It verifies that each function and component produces the right output for a 
+given input.
+-Maintainability: Well-tested code is easier to pdateand extend without introducing new bugs.
